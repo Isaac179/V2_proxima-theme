@@ -1,0 +1,314 @@
+/**
+* Ultraligero Framework
+* ---------------------
+*
+* Desarrollado por El Cultivo
+* http://elcultivo.mx
+*
+*
+*
+* Usar ese archivo para customizar estilos
+* 
+*/
+
+@charset "UTF-8";
+
+@import "reset";
+@import "_config"; 
+@import "_mixins";
+@import "_funciones";
+@import "_base";
+@import "_reticula"; 
+
+
+/**
+* FUENTES
+* -------
+*/
+
+// Declara tus fuentes usando el MIXIN
+
+@include declara-font-face(Open, '../fonts/OpenSans-Regular-webfont');
+@include declara-font-face(Open, '../fonts/OpenSans-Bold-webfont', bold);
+@include declara-font-face(Open, '../fonts/OpenSans-Italic-webfont', normal, italic);
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap');
+/**
+* TIPOGRAFÍA
+* ----------
+*/
+
+// Tamaños de tipografía
+// Crea clases para los principales tamaños que usas
+// Asígnales tamaños usando el MIXIN tamano-fuente()
+
+.tam-prin{ @include tamano-fuente(7, 8); }
+.tam-sec{@include tamano-fuente(5, 6, false);}
+
+.tam-ter{
+	@include tamano-fuente(3, 5, false);
+	p, ul, ol{ @include tamano-fuente(3, 5); }
+	input, textarea{@include tamano-fuente(3, 5, 1); }
+}
+.tam-cuat{
+	p{@include tamano-fuente(2, 5, 2);}
+}
+
+.tam-min{
+	p, ul, ol{ @include tamano-fuente(1); }
+}
+
+@import 'global';
+
+.logo{
+    width:200px;
+    height:50px;
+}
+
+header{
+    position:fixed;
+    top:0;
+    border-top: 0px solid rgb(52, 53, 51);
+    width:100%;
+	font-family: 'Source Code Pro', monospace;
+	z-index: 300;
+	background-color: white;
+
+.wrapper{
+    background-color: rgb(255, 255, 255);
+    padding-top: 100px;
+    padding-bottom:100px;
+}
+
+
+
+// Ejemplo de Nesting
+
+nav{
+    @include caja-flex(space-between, center, nowrap);
+
+    ul{
+        display:flex;
+        padding:0;
+
+        a{
+            padding: 10px;
+            font-size: 1.9rem;
+            font-weight:bold;
+			color: black;
+        }
+
+        a:hover{
+            color:#6495ED;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.presentacion{
+    
+    padding-top: 150px;
+    padding-bottom:0px;
+    
+    .flex-item2{
+        text-align:center;
+    }
+
+    h1{
+        margin-top:0;
+        padding-right: 20px;
+        font-size: $font-h1;
+    }
+
+    p{
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+.servicios{
+    div{
+        text-align: center;
+    }
+
+    .tipo-servicios{
+        @include caja-flex(center, center, nowrap);
+        i{
+            font-size: 30px;
+            color: #6495ED;
+        }
+    }
+}
+
+
+
+@import 'medios';
+
+.cuerpo{
+	background-color: white;
+}
+
+.slider-home{
+	padding: 0px 0px 0px 20px;
+	height: auto;
+	overflow: hidden;
+	@include respond-to(chico){ 
+	padding: 0px 0px 0px 0px;
+	}
+}
+
+.seccion-pagina{
+	padding-top: 30px;
+	padding-bottom: 20px;
+
+	.cuadro-trabajo{
+		padding: 20px 20px 20px 20px;
+		border-bottom: 20px solid #FF999A;
+		background-color: $color-fondo;
+		a,p{
+			line-height: 35px;
+		}
+		a {
+			float: right;
+		  }
+	}
+	.cuadro-trabajo2{
+		padding: 20px 20px 20px 20px;
+		border-bottom: 20px solid #993399;
+		background-color: $color-fondo;
+		a,p{
+			line-height: 35px;
+		}
+		a {
+			float: right;
+		  }
+	}
+	.cuadro-trabajo3{
+		padding: 20px 20px 20px 20px;
+		border-bottom: 20px solid #EA2707;
+		background-color: $color-fondo;
+		a,p{
+			line-height: 35px;
+		}
+		a {
+			float: right;
+		  }
+	}
+
+	span{
+		font-size: 15px;
+		padding-left: 10px;
+		font-weight: 510;
+	}
+
+	span{
+		font-size: 15px;
+		padding-left: 10px;
+		font-weight: 510;
+	}
+}
+
+.seccion-empresa{
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	.logo-empresa{
+		width: 150px !important;
+		margin-top: 40px !important;
+		padding-bottom: 20px;
+	}
+
+	span{
+		font-size: 15px;
+		padding-left: 10px;
+		font-weight: 510;
+	}
+	
+}
+
+.seccion-nosotros{
+	p{
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	
+	span{
+		font-size: 15px;
+		padding-left: 10px;
+		font-weight: 510;
+	}
+}
+
+.seccion-insta{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: $color-fondo;
+
+	.img-insta{
+		width: 270px !important;
+		margin-top: 10px !important;
+		padding-bottom: 10px;
+	}
+
+	span{
+		font-size: 15px;
+		padding-left: 10px;
+		font-weight: 510;
+	}
+
+}
+
+.pre-footer{
+	background-color: #EDEDED; 
+	padding-top: 20px;
+	padding-bottom: 20px;
+	p{
+	  font-size: 19px;
+	  text-align: center;
+	}
+}
+
+.footer-proxima{
+	background-color: white;//wraper
+	.logo-proxima-footer{
+		width: 218px !important;
+		margin-top: 40px !important;
+		padding-bottom: 20px;
+	}
+	.direccion-texto{
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+.mapa-footer{
+	padding-left: 0px;
+	iframe{
+		width: 1200px;
+		height:300px;
+		border:0;
+		@include respond-to(chico){ 
+			padding: 0px 0px 0px 0px;
+			}
+	}	
+}
+
+.fondo-footer{
+	background-color: black;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	p{
+		font-size: 18px;
+		color: #f7f7f7;
+	  }
+
+	  .cuadro-fondo2{
+		  text-align: right;
+	  }
+}
+
+.swiper-container {
+	width: 995px;
+	height: 500px;
+  }
+
+}
